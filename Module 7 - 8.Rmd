@@ -1,0 +1,47 @@
+---
+title: "Modules 7 and 8"
+author: "Pratik"
+date: "February 9, 2019"
+output: html_document
+---
+#Challenge 7.1
+a <- "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal."
+library(stringr)
+str_split(a, " ", simplify = FALSE)
+gsub("[[:punct:]]","",a)
+m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)
+m
+#Challenge 7.2
+##Given the matrix, m, above, extract the 2nd, 3rd, and 6th columns and assign them to the variable x
+x <- m[,c(2,3,6)]
+x
+##Given the matrix, m, above, extract the 6th to 8th row and assign them to the variable x
+x <- m[6:8,1:10]
+x
+##Given the matrix, m, above, extract the elements from row 2, column 2 to row 6, column 9 and assign them to the variable x
+x <- m[c(2:6), c(2:9)]
+x
+#Challenge 7.3
+##Construct a 4-dimensional, 400 element array (5 x 5 x 4 x 4) named a consisting of the numbers 400 to 1 (i.e., a descending series)##
+a <- array(data = 400:1, dim = c(5,5,4,4))
+a
+a[1,1,1,2]
+a[2, 3, 2, ]
+a[1:5, 1:5, 3, 3]
+#Challenge 7.5
+##Store the following numbers as a 5 x 3 matrix: 3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2. Be sure to fill the matrix ROWWISE.
+h <- matrix(data = c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2), nrow = 5, ncol = 3, byrow = TRUE)
+h
+as.data.frame(h)
+df <- as.data.frame(h)
+df
+df$V2 <- as.logical(df$V2)
+df$V2
+df$V3 <- as.factor(df$V3)
+df$V3
+str(df)
+#Challenge 7.4 (not sure if this is the correct way but this is the best I could make)##
+Primates <- list(Haplorhini <- list("Anthropoidea",list("Platyrrhini",(list("Cebidae", "Atelidae", "Pitheciidae")),"Catarrhini",(list("Cercopithecidae", "Hylobatidae", "Hominidae"))),"Tarsioidea",(list("Tarsiidae"))),Strepsirhini <- list("Lorisoidea",list("Lorisidae","Galagidae"),"Lemuroidea",list("Cheirogaleidae","Lepilemuridae","Indriidae","Lemuridae","Daubentoniidae")))
+Primates
+
+
